@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <style>
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h4 class="mb-0">phoenix</h4>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <div class="nav-section-title">Home</div>
+                <a href="#" class="nav-link active">
+                    <i class="bi bi-house"></i>
+                    E commerce
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-kanban"></i>
+                    Project management
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-people"></i>
+                    CRM
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-airplane"></i>
+                    Travel agency
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-graph-up"></i>
+                    Stock
+                    <span class="badge-new">NEW</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-chat"></i>
+                    Social feed
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Apps</div>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-cart"></i>
+                    E commerce
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-people"></i>
+                    CRM
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-kanban"></i>
+                    Project management
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-airplane"></i>
+                    Travel agency
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-graph-up"></i>
+                    Stock
+                    <span class="badge-new">NEW</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-chat"></i>
+                    Chat
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-envelope"></i>
+                    Email
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-calendar-event"></i>
+                    Events
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-kanban"></i>
+                    Kanban
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-bar-chart"></i>
+                    Gantt chart
+                    <span class="badge-new">NEW</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-share"></i>
+                    Social
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-images"></i>
+                    Gallery
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-folder"></i>
+                    File manager
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-calendar"></i>
+                    Calendar
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Pages</div>
+                <a href="#" class="nav-link">
+                    <i class="bi bi-file-earmark"></i>
+                    Starter
+                </a>
+            </div>
+        </nav>
+
+        <div class="mt-auto p-3">
+            <button class="btn btn-outline-secondary w-100">
+                <i class="bi bi-chevron-left"></i>
+                Collapsed View
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Header -->
+        <div class="top-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="search-bar">
+                    <i class="bi bi-search"></i>
+                    <input type="text" class="form-control" placeholder="Search...">
+                </div>
+                <div class="header-actions">
+                    <i class="bi bi-sun"></i>
+                    <i class="bi bi-bell"></i>
+                    <i class="bi bi-grid-3x3-gap"></i>
+                    <!-- <img src="https://via.placeholder.com/32" class="rounded-circle" alt="Profile"> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-title">
+            <h2 class="mb-1">Ecommerce Dashboard</h2>
+            <p class="text-muted mb-0">Here's what's going on at your business right now</p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="summary-card">
+                <div class="summary-card-icon icon-green">
+                    <i class="bi bi-star"></i>
+                </div>
+                <div class="summary-card-content">
+                    <h3>57 new orders</h3>
+                    <p>Awaiting processing</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-card-icon icon-orange">
+                    <i class="bi bi-pause"></i>
+                </div>
+                <div class="summary-card-content">
+                    <h3>5 orders</h3>
+                    <p>On hold</p>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-card-icon icon-red">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+                <div class="summary-card-content">
+                    <h3>15 products</h3>
+                    <p>Out of stock</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Grid -->
+        <div class="chart-grid">
+            <!-- Total Sells Chart -->
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <h5 class="chart-card-title">Total sells</h5>
+                    <small class="text-muted">Payment received across all channels</small>
+                </div>
+                <div class="chart-container">
+                    <canvas id="totalSellsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Total Orders -->
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <h5 class="chart-card-title">Total orders</h5>
+                    <span class="text-danger">-6.8%</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <h3 class="mb-0">16,247</h3>
+                    <small class="text-muted ms-2">Last 7 days</small>
+                </div>
+                <div class="chart-container">
+                    <canvas id="ordersChart"></canvas>
+                </div>
+            </div>
+
+            <!-- New Customers -->
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <h5 class="chart-card-title">New customers</h5>
+                    <span class="text-success">+26.5%</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <h3 class="mb-0">356</h3>
+                    <small class="text-muted ms-2">Last 7 days</small>
+                </div>
+                <div class="chart-container">
+                    <canvas id="customersChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Chart Cards -->
+        <div class="chart-grid">
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <h5 class="chart-card-title">Top coupons</h5>
+                    <small class="text-muted">Last 7 days</small>
+                </div>
+                <div class="chart-container">
+                    <canvas id="couponsChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <h5 class="chart-card-title">Paying vs non paying</h5>
+                    <small class="text-muted">Last 7 days</small>
+                </div>
+                <div class="chart-container">
+                    <canvas id="payingChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Table -->
+        <div class="reviews-section">
+            <div class="reviews-header">
+                <div>
+                    <h5 class="mb-1">Latest reviews</h5>
+                    <small class="text-muted">Payment received across all channels</small>
+                </div>
+                <div class="table-controls">
+                    <input type="text" placeholder="Search reviews" class="form-control">
+                    <select class="form-select">
+                        <option>All products</option>
+                    </select>
+                    <a href="#" class="btn-demo">Chat demo</a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>PRODUCT</th>
+                            <th>CUSTOMER</th>
+                            <th>RATING</th>
+                            <th>REVIEW</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>iPhone 13 Pro</td>
+                            <td>John Doe</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>Great product!</td>
+                            <td><span class="badge bg-success">Approved</span></td>
+                        </tr>
+                        <tr>
+                            <td>MacBook Air</td>
+                            <td>Jane Smith</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>Good quality</td>
+                            <td><span class="badge bg-warning">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chart.js 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // Total Sells Chart
+            const totalSellsCtx = document.getElementById('totalSellsChart').getContext('2d');
+            new Chart(totalSellsCtx, {
+                type: 'line',
+                data: {
+                    labels: ['01 May', '05 May', '10 May', '15 May', '20 May', '25 May', '30 May'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [65, 59, 80, 81, 56, 55, 40],
+                        borderColor: '#0d6efd',
+                        backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                        tension: 0.4
+                    }, {
+                        label: 'Revenue',
+                        data: [28, 48, 40, 19, 86, 27, 90],
+                        borderColor: '#6c757d',
+                        backgroundColor: 'rgba(108, 117, 125, 0.1)',
+                        borderDash: [5, 5],
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Orders Chart
+            const ordersCtx = document.getElementById('ordersChart').getContext('2d');
+            new Chart(ordersCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Orders',
+                        data: [12, 19, 3, 5, 2, 3, 7],
+                        backgroundColor: '#0d6efd'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Customers Chart
+            const customersCtx = document.getElementById('customersChart').getContext('2d');
+            new Chart(customersCtx, {
+                type: 'line',
+                data: {
+                    labels: ['01 May', '02 May', '03 May', '04 May', '05 May', '06 May', '07 May'],
+                    datasets: [{
+                        label: 'New Customers',
+                        data: [65, 59, 80, 81, 56, 55, 40],
+                        borderColor: '#0d6efd',
+                        backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Coupons Chart
+            const couponsCtx = document.getElementById('couponsChart').getContext('2d');
+            new Chart(couponsCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Percentage discount', 'Fixed card discount', 'Fixed product discount'],
+                    datasets: [{
+                        data: [72, 18, 10],
+                        backgroundColor: ['#0d6efd', '#6c757d', '#dee2e6']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Paying Chart
+            const payingCtx = document.getElementById('payingChart').getContext('2d');
+            new Chart(payingCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Paying customer', 'Non-paying customer'],
+                    datasets: [{
+                        data: [30, 70],
+                        backgroundColor: ['#0d6efd', '#6c757d']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+
+        // Mobile sidebar toggle
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('show');
+        }
+
+        // Add mobile menu button if needed
+        if (window.innerWidth <= 768) {
+            const header = document.querySelector('.top-header');
+            const menuButton = document.createElement('button');
+            menuButton.innerHTML = '<i class="bi bi-list"></i>';
+            menuButton.className = 'btn btn-outline-secondary d-md-none';
+            menuButton.onclick = toggleSidebar;
+            header.querySelector('.d-flex').prepend(menuButton);
+        }
+    </script>
+</body>
+</html>
