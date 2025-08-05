@@ -259,7 +259,15 @@
             background-color: #0b5ed7;
             color: white;
         }
-
+        .userName {
+            padding-top: 15px;
+        }
+        
+        #profileImg {
+           width: 45px;
+            border-radius: 50%;  /* 정 원형 */
+            object-fit: cover;  
+        }
         /* Responsive */
         @media (max-width: 768px) {
             .sidebar {

@@ -101,28 +101,10 @@
                 passwordToggle.className = 'bi bi-eye';
             }
         }
-    //   function kakaoLoginBtn() {
-    //         // 실제 카카오 앱 키와 리다이렉트 URI로 교체해야 합니다
-    //         const KAKAO_CLIENT_ID = "e89e738cab0556ba1fd55f8af316df51"; // 카카오 개발자 콘솔에서 받은 JavaScript 키
-    //         const REDIRECT_URI = "http://localhost:8080/api/user/callback";
-            
-    //         const kakaoAuthUrl = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-            
-    //         window.location.href = kakaoAuthUrl;
-    //     }
+
         function kakaoLoginBtn() {
-            console.log("kakakooo")
-            $.ajax({
-            url:'http://192.168.1.94:8080/api/user/getKakaoAuthUrl',
-            type:'post',
-            async: false,
-            dataType: 'text',
-            success: function (res) {
-                alert("res", res)
-            location.href = res;
-            }
-            });
-            }
+            window.location.href = "http://192.168.1.94:8080/api/user/getKakaoAuthUrl";
+        }        
 
         // Show alert message
         function showAlert(message, type = 'danger') {

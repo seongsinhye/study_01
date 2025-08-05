@@ -137,8 +137,10 @@
                     <input type="text" class="form-control" placeholder="Search...">
                 </div>
                 <div class="header-actions">
-                    <i class="bi bi-sun"></i>
+                    <!-- <i class="bi bi-sun"></i> -->
                     <i class="bi bi-bell"></i>
+                    <p class="userName"></p>
+                    <img id="profileImg">
                     <i class="bi bi-grid-3x3-gap"></i>
                     <!-- <img src="https://via.placeholder.com/32" class="rounded-circle" alt="Profile"> -->
                 </div>
@@ -296,6 +298,24 @@
     </div>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+                const params = new URLSearchParams(window.location.search);
+                const nickname = params.get("nickname");
+                const img = params.get("img");
+
+                if (nickname) {
+                    const nameElement = document.querySelector(".userName");
+                    if (nameElement) {
+                        nameElement.textContent = nickname;
+                    }
+                    const imgElement = document.getElementById("profileImg");
+                    if (imgElement) {
+                        imgElement.src = img;
+                    }
+                }
+            });
+
+
         // Chart.js 초기화
         document.addEventListener('DOMContentLoaded', function() {
             // Total Sells Chart
