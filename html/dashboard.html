@@ -25,17 +25,9 @@
                     <i class="bi bi-house"></i>
                     E commerce
                 </a>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-kanban"></i>
-                    Project management
-                </a>
-                <a href="#" class="nav-link">
+                <a href="#" class="nav-link ">
                     <i class="bi bi-people"></i>
                     CRM
-                </a>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-airplane"></i>
-                    Travel agency
                 </a>
                 <a href="#" class="nav-link">
                     <i class="bi bi-graph-up"></i>
@@ -51,27 +43,6 @@
             <div class="nav-section">
                 <div class="nav-section-title">Apps</div>
                 <a href="#" class="nav-link">
-                    <i class="bi bi-cart"></i>
-                    E commerce
-                </a>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-people"></i>
-                    CRM
-                </a>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-kanban"></i>
-                    Project management
-                </a>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-airplane"></i>
-                    Travel agency
-                </a>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-graph-up"></i>
-                    Stock
-                    <span class="badge-new">NEW</span>
-                </a>
-                <a href="#" class="nav-link">
                     <i class="bi bi-chat"></i>
                     Chat
                 </a>
@@ -82,10 +53,6 @@
                 <a href="#" class="nav-link">
                     <i class="bi bi-calendar-event"></i>
                     Events
-                </a>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-kanban"></i>
-                    Kanban
                 </a>
                 <a href="#" class="nav-link">
                     <i class="bi bi-bar-chart"></i>
@@ -101,30 +68,11 @@
                     Gallery
                 </a>
                 <a href="#" class="nav-link">
-                    <i class="bi bi-folder"></i>
-                    File manager
-                </a>
-                <a href="#" class="nav-link">
                     <i class="bi bi-calendar"></i>
                     Calendar
                 </a>
             </div>
-
-            <div class="nav-section">
-                <div class="nav-section-title">Pages</div>
-                <a href="#" class="nav-link">
-                    <i class="bi bi-file-earmark"></i>
-                    Starter
-                </a>
-            </div>
         </nav>
-
-        <div class="mt-auto p-3">
-            <button class="btn btn-outline-secondary w-100">
-                <i class="bi bi-chevron-left"></i>
-                Collapsed View
-            </button>
-        </div>
     </div>
 
     <!-- Main Content -->
@@ -160,8 +108,8 @@
                     <i class="bi bi-star"></i>
                 </div>
                 <div class="summary-card-content">
-                    <h3>57 new orders</h3>
-                    <p>Awaiting processing</p>
+                    <h3 class="newOrder">00</h3>
+                    <h3>new orders</h3>
                 </div>
             </div>
             <div class="summary-card">
@@ -169,8 +117,8 @@
                     <i class="bi bi-pause"></i>
                 </div>
                 <div class="summary-card-content">
-                    <h3>5 orders</h3>
-                    <p>On hold</p>
+                    <h3 class="onHold">00</h3>
+                    <h3>On hold orders</h3>
                 </div>
             </div>
             <div class="summary-card">
@@ -299,6 +247,28 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            fetch("http://localhost:8080/api/main/ecommerce")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("API 호출 실패");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const ecommerceData = data.data;
+                    const newOrders = ecommerceData.new.total;
+                    const onHoldOrders = ecommerceData.hold.total;
+
+                    // DOM에 값 삽입
+                    document.querySelector(".newOrder").textContent = newOrders;
+                    document.querySelector(".onHold").textContent = onHoldOrders;
+                })
+                .catch(error => {
+                    console.error("ecommerce API 에러:", error);
+                });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
                 const params = new URLSearchParams(window.location.search);
                 const nickname = params.get("nickname");
                 const img = params.get("img");
@@ -313,6 +283,20 @@
                         imgElement.src = img;
                     }
                 }
+            });
+
+            // nav-link 클릭 시 active 클래스 토글
+            document.addEventListener("DOMContentLoaded", function () {
+                const navLinks = document.querySelectorAll(".nav-link");
+
+                navLinks.forEach(link => {
+                    link.addEventListener("click", function (e) {
+                        // 모든 nav-link에서 active 제거
+                        navLinks.forEach(l => l.classList.remove("active"));
+                        // 클릭한 항목에 active 추가
+                        this.classList.add("active");
+                    });
+                });
             });
 
 
